@@ -1,0 +1,37 @@
+services:
+  mainapp:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - PYTHONPATH=/app/
+    depends_on:
+      - mongodb
+    
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data_container:/data/db
+  nginx:
+    restart: always
+    container_name: nginx
+    image: nginx:alpine
+    ports:
+      - target: 80
+        published: 80
+    volumes:
+      - type: bind
+        source: ./nginx/nginx.conf
+        target: /etc/nginx/nginx.conf
+    depends_on:
+      - mainapp
+    links:
+      - mainapp:mainapp
+
+
+volumes:
+  mongodb_data_container:
+
+
