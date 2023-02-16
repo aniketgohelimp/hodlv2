@@ -79,13 +79,15 @@ Detailed documentation can be found in the [wiki](https://github.com/p0ntsNL/hod
 - Windows (coming soon)
 - Docker 
 
-## Configuration
-
 ## Docker-Compose
 
 ```
 docker-compose up --build
 ```
+
+
+## Configuration
+
 
 A detailed configuration guide can be found in the [wiki](https://github.com/p0ntsNL/hodlv2/wiki/Configuration).
 
