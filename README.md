@@ -77,9 +77,15 @@ Detailed documentation can be found in the [wiki](https://github.com/p0ntsNL/hod
 - [Ubuntu / Debian](https://github.com/p0ntsNL/hodlv2/wiki/Installation-%7C-Ubuntu-&-Debian)
 - [MacOS](https://github.com/p0ntsNL/hodlv2/wiki/Installation-%7C-MacOS)
 - Windows (coming soon)
-- Docker (coming soon)
+- Docker 
 
 ## Configuration
+
+## Docker-Compose
+
+```
+docker-compose up --buildd
+```
 
 A detailed configuration guide can be found in the [wiki](https://github.com/p0ntsNL/hodlv2/wiki/Configuration).
 

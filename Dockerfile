@@ -1,6 +1,4 @@
 FROM python:3.9-slim-bullseye
-RUN apt-get update
-# RUN apt-get install 
 ENV PYTHONPATH="/app"
 WORKDIR /app/
 COPY . .
