@@ -84,7 +84,7 @@ Detailed documentation can be found in the [wiki](https://github.com/p0ntsNL/hod
 ## Docker-Compose
 
 ```
-docker-compose up --buildd
+docker-compose up --build
 ```
 
 A detailed configuration guide can be found in the [wiki](https://github.com/p0ntsNL/hodlv2/wiki/Configuration).
