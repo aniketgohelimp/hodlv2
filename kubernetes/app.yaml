@@ -1,0 +1,42 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+        app: mainapp-deployment
+  name: mainapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        app: mainapp
+  template:
+    metadata:
+      labels:
+        app: mainapp
+    spec:
+      containers:
+        - name: mainapp
+          image: aniketgohel/demo:v5-mainapp
+          env:
+            - name: PYTHONPATH  
+              value: /app/
+            - name: MONGO_HOST  
+              value: mongo-0.mongo
+          ports:
+            - containerPort: 8080
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    apps: mainapp 
+  name: mainapp
+spec:
+  ports:
+    - name: "8080"
+      port: 8080
+      targetPort: 8080
+  selector:
+    app: mainapp

@@ -78,11 +78,18 @@ Detailed documentation can be found in the [wiki](https://github.com/p0ntsNL/hod
 - [MacOS](https://github.com/p0ntsNL/hodlv2/wiki/Installation-%7C-MacOS)
 - Windows (coming soon)
 - Docker 
+- Kubernetes
 
 ## Docker-Compose
 
 ```
 docker-compose up --build
+```
+
+## Kubernetes
+
+```
+kubectl apply -f kubernetes
 ```
 
 
