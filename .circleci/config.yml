@@ -16,7 +16,11 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "echo Hello, World!"
+          command: |
+            export HASH=$(git rev-parse --short HEAD)
+            git tag new-1 $HASH
+            git push origin new-1
+          
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
