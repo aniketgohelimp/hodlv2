@@ -6,6 +6,10 @@ version: 2.1
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
   say-hello:
+    deploy-job:
+      steps:
+        - add_ssh_keys:
+            fingerprints:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
     docker:
@@ -13,6 +17,9 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
+      - add_ssh_keys:
+          fingerprints:
+          - 00:ea:d5:04:09:b5:de:19:71:3a:80:9c:0a:58:ed:fb
       - checkout
       - run:
           name: "Say hello"
@@ -28,3 +35,4 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      
